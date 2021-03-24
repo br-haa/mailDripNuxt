@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  layout: 'blank',
   data() {
     return {
       pages: [],

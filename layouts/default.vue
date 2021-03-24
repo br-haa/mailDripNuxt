@@ -1,58 +1,17 @@
 <template>
   <div>
     <Nuxt />
-    <div id="pageBody">
-      <Header0>
-        <template #logo> </template>
-        <template #numberBlock> </template>
-      </Header0>
-      <article id="content1" class="content">
-        <div class="innerWrapper"></div>
-      </article>
-      <Hero>
-        <template #hero>
-          <img
-            v-if="content.hero"
-            :src="getStrapiMedia(content.hero[0].url)"
-            alt="heroImage"
-          />
-        </template>
-      </Hero>
-      <Form> </Form>
-      <article id="content2" class="content">
-        <div class="innerWarpper"></div>
-      </article>
-      <Cta></Cta>
-      <CoppyRight></CoppyRight>
-    </div>
   </div>
 </template>
 
 <script>
-import Header0 from '~/components/Header0'
-import Hero from '~/components/Hero'
-import Cta from '~/components/Cta'
-import CoppyRight from '~/components/CoppyRight'
-import { getStrapiMedia } from '~/util/media'
-export default {
-  components: {
-    Header0,
-    Hero,
-    Cta,
-    CoppyRight,
-  },
-  computed: {
-    content() {
-      return this.$store.state.content
-    },
-  },
-  methods: {
-    getStrapiMedia,
-  },
-}
+export default {}
 </script>
 
 <style lang="scss">
+#content1 {
+  padding: 150px 0 0 0;
+}
 $textMargin: clamp(0.3em, 1vw / 2.7, 0.5em);
 body {
   margin: 0;

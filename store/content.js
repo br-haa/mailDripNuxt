@@ -1,8 +1,10 @@
-export const state = () => ({})
+export const state = () => ({
+  data: {},
+})
 
 export const mutations = {
   set(state, content) {
-    state = content
+    state.data = content
   },
 }
 
