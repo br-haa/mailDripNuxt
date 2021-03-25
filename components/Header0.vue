@@ -47,6 +47,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-self: center;
     img {
       max-width: 300px;
       @media screen and (max-width: 1080px) {

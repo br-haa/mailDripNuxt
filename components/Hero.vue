@@ -1,5 +1,5 @@
 <template>
-  <div id="hero" class="outerWrapper">
+  <div id="hero" class="innerWrapper">
     <div id="heroImageHolder">
       <slot name="hero" alt="hero image" />
     </div>

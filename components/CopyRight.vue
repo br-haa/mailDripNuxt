@@ -1,16 +1,15 @@
 <template>
-  <div id="cta" :style="`background:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`">
-    <div>
-      <slot name="cta" />
-    </div>
-    <div>
-      <slot name="call" />
-    </div>
+  <div
+    id="copyRight"
+    :style="`background:hsl(${textColor.h},${textColor.s}%,${textColor.l}%)`"
+  >
+    <slot />
   </div>
 </template>
+
 <script>
 export default {
-  name: 'Cta',
+  name: 'CopyRight',
   computed: {
     hsla() {
       const { h, s, l, a } = this.$store.state.theme.light.hsla
@@ -27,10 +26,15 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" scoped>
-#cta {
-  text-align: center;
+#copyRight {
   width: 100%;
-  padding: 1rem 0 1rem 0;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+}
+p {
+  font-size: 1rem;
+  color: white;
 }
 </style>
