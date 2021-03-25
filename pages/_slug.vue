@@ -159,6 +159,9 @@ export default {
 }
 .innerWrapper {
   width: 60%;
+  @media (max-width: 1080px) {
+    width: 95%;
+  }
 }
 .logoHolder {
   max-width: 400px;
@@ -187,6 +190,10 @@ export default {
   border-radius: 30px;
   padding: 0.5rem 2rem 0.5rem 2rem;
   box-shadow: 0 0 5px 3px black;
+  @media (max-width: 1080px) {
+    font-size: clamp(1rem, 4 * 1vw / 2, 2.5rem);
+    padding: 0.5rem;
+  }
 }
 #formOuter {
   padding: 1rem 2rem 1rem 2rem;
@@ -219,7 +226,7 @@ body {
   font-family: sans-serif;
 }
 h1 {
-  font-size: clamp(2rem, 4 * 2vw / 2, 5rem);
+  font-size: clamp(2rem, 4 * 2vw / 2, 3.3rem);
   font-weight: 600;
   margin: $textMargin 0 $textMargin 0;
 }

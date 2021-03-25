@@ -48,11 +48,8 @@ export default {
     justify-content: space-between;
     align-items: center;
     justify-self: center;
-    img {
-      max-width: 300px;
-      @media screen and (max-width: 1080px) {
-        width: 40%;
-      }
+    @media screen and (max-width: 1080px) {
+      column-gap: 1rem;
     }
   }
 }
