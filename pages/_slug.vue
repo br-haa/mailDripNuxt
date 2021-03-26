@@ -57,9 +57,17 @@
             </p>
           </div>
         </form-controller>
+        <p>
+          100% Privacy Guaranteed. I consent to any and all communication sent
+          to me via phone call, text message, or email.
+        </p>
       </article>
 
-      <article id="content2" class="content innerWrapper">
+      <article
+        v-if="content.content2"
+        id="content2"
+        class="content innerWrapper"
+      >
         <h1 :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`">
           {{ content.content2.title }}
         </h1>
