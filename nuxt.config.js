@@ -1,10 +1,8 @@
-const strapiBaseUri = process.env.API_URL || 'http://localhost:1337'
-
+const strapiBaseUri =
+  process.env.API_URL || 'https://strapi-6ge4.onrender.com:1337'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  env: {
-    strapiBaseUri,
-  },
+  env: { strapiBaseUri },
   head: {
     title: 'mailDripNuxt',
     htmlAttrs: {
