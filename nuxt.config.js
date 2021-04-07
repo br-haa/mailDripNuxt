@@ -1,5 +1,5 @@
 const strapiBaseUri =
-  process.env.API_URL || 'https://strapi-6ge4.onrender.com:1337'
+  process.env.API_URL || 'https://strapi-6ge4.onrender.com'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   env: { strapiBaseUri },
