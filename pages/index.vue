@@ -18,7 +18,7 @@ export default {
   },
   async mounted() {
     try {
-      this.pages = await this.$strapi.find('pages')
+      this.pages = await this.$strapi.find('Pages')
     } catch (error) {}
   },
 }
