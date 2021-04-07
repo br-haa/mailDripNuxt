@@ -4,7 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   env: { strapiBaseUri },
   head: {
-    title: 'mailDripNuxt',
+  title: 'mailDripNuxt',
     htmlAttrs: {
       lang: 'en',
     },
