@@ -159,7 +159,6 @@ export default {
   },
 }
 </script>
-
 <style lang="scss">
 .outerWrapper {
   display: grid;

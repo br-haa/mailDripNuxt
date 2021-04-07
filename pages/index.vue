@@ -20,7 +20,9 @@ export default {
   async mounted() {
     try {
       this.pages = await this.$strapi.find('Pages')
-    } catch (error) {}
+    } catch (error) {
+      console.error(error)
+    }
   },
 }
 </script>
