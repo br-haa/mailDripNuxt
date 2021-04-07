@@ -21,28 +21,29 @@
       </template>
     </Header0>
     <div class="outerWrapper">
-      <article id="content1" class="content innerWrapper">
+      <article
+        v-if="content.content1"
+        id="content1"
+        class="content innerWrapper"
+      >
         <h1 :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`">
           {{ content.content1.title }}
         </h1>
         <p
-          v-for="(text, index) in content.content1.bodyText"
+          v-for="(text, index) in content.content1.contentText"
           :key="`cont1${index}`"
         >
           {{ text.text }}
         </p>
       </article>
-      <Hero>
+      <Hero v-if="content.hero.url">
         <template #hero>
-          <img
-            v-if="content.hero"
-            :src="getStrapiMedia(content.hero[0].url)"
-            alt="heroImage"
-          />
+          <img :src="getStrapiMedia(content.hero.url)" alt="heroImage" />
         </template>
       </Hero>
 
       <article
+        v-if="content.form"
         id="formOuter"
         class="innerWrapper"
         :style="`background:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`"
