@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h1>hello there</h1>
     <div>
       <div v-for="(page, index) in pages" :key="index">
         <NuxtLink :to="`${page.name.toLowerCase()}`">{{ page.name }}</NuxtLink>
