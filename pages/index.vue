@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h1>hello there</h1>
     <div>
       <div v-for="(page, index) in pages" :key="index">
         <NuxtLink :to="`${page.name.toLowerCase()}`">{{ page.name }}</NuxtLink>
@@ -19,7 +20,9 @@ export default {
   async mounted() {
     try {
       this.pages = await this.$strapi.find('Pages')
-    } catch (error) {}
+    } catch (error) {
+      console.error(error)
+    }
   },
 }
 </script>

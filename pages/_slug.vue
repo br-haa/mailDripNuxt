@@ -159,7 +159,6 @@ export default {
   },
 }
 </script>
-
 <style lang="scss">
 .outerWrapper {
   display: grid;
@@ -228,7 +227,6 @@ footer {
   width: 100%;
   margin: 4vw 0 0 0;
 }
-
 $textMargin: clamp(0.3em, 1vw / 2.7, 0.5em);
 body {
   margin: 0;
