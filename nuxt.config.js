@@ -5,6 +5,13 @@ export default {
   env: {
     strapiBaseUri,
   },
+  generate: {
+    routes() {
+      return this.$strapi.find('Pages').then(({ data }) => {
+        return data.name.map(({ slug }) => `/${slug}`)
+      })
+    },
+  },
   head: {
     title: 'mailDripNuxt',
     htmlAttrs: {
