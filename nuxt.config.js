@@ -4,8 +4,8 @@ export default {
   env: { strapiBaseUri },
   generate: {
     routes() {
-      return this.$strapi.find('Pages').then(({ data }) => {
-        return data.name.map(({ slug }) => `/${slug}`)
+      return this.$strapi.find('Pages').then((data) => {
+        return data.name.map(({ name }) => `/${name}`)
       })
     },
   },
