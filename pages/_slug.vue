@@ -12,7 +12,11 @@
           <a
             id="topPhone"
             class="phoneNumber"
-            :style="`background:hsl(${accent.h},${accent.s}%,${accent.l}%); color:hsl(${textColor.h},${textColor.s}%,${textColor.l}%)`"
+            :style="`background:hsl(${accent.h},${accent.s}%,${
+              accent.l
+            }%); color:hsl(${textColor.h},${textColor.s}%,${
+              accent.l > 50 ? textColor.l : 100
+            }%)`"
             :href="`tel:${content.phone}`"
           >
             Call Us: {{ content.phone }}
@@ -27,13 +31,13 @@
         class="content innerWrapper"
       >
         <h1 :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`">
-          {{ content.content1.title }}
+          {{ noWidow(content.content1.title) }}
         </h1>
         <p
           v-for="(text, index) in content.content1.contentText"
           :key="`cont1${index}`"
         >
-          {{ text.text }}
+          {{ noWidow(text.text) }}
         </p>
       </article>
       <Hero v-if="content.hero.url">
@@ -49,16 +53,30 @@
         :style="`background:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`"
       >
         <form-controller :theme="$store.state.theme.light">
-          <h1 id="formTopText">
-            {{ content.form.title }}
+          <h1
+            id="formTopText"
+            :style="`color:hsl(${textColor.h},${textColor.s}%,${
+              hsla.l > 50 ? textColor.l : 100
+            }%)`"
+          >
+            {{ noWidow(content.form.title) }}
           </h1>
-          <div id="fomTextHolder">
+          <div
+            id="fomTextHolder"
+            :style="`color:hsl(${textColor.h},${textColor.s}%,${
+              hsla.l > 50 ? textColor.l : 100
+            }%)`"
+          >
             <p id="formText">
-              {{ content.form.text }}
+              {{ noWidow(content.form.text) }}
             </p>
           </div>
         </form-controller>
-        <p>
+        <p
+          :style="`color:hsl(${textColor.h},${textColor.s}%,${
+            hsla.l > 50 ? textColor.l : 100
+          }%)`"
+        >
           100% Privacy Guaranteed. I consent to any and all communication sent
           to me via phone call, text message, or email.
         </p>
@@ -70,22 +88,32 @@
         class="content innerWrapper"
       >
         <h1 :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`">
-          {{ content.content2.title }}
+          {{ noWidow(content.content2.title) }}
         </h1>
         <p
-          v-for="(text, index) in content.content2.bodyText"
+          v-for="(text, index) in content.content2.contentText"
           :key="`cont2${index}`"
         >
-          {{ text.text }}
+          {{ noWidow(text.text) }}
         </p>
       </article>
       <footer>
         <Cta>
           <template #cta>
-            <h3>{{ content.cta }}</h3>
+            <h3
+              :style="`color:hsl(${textColor.h},${textColor.s}%,${
+                hsla.l > 50 ? textColor.l : 100
+              }%)`"
+            >
+              {{ content.cta }}
+            </h3>
           </template>
           <template #call>
-            <h3>
+            <h3
+              :style="`color:hsl(${textColor.h},${textColor.s}%,${
+                hsla.l > 50 ? textColor.l : 100
+              }%)`"
+            >
               Call Us Today:
               <a
                 id="botPhone"
@@ -98,7 +126,9 @@
             </h3>
           </template>
         </Cta>
-        <CopyRight>
+        <CopyRight
+          :style="`background:hsl(${accent.h},${accent.s}%,${accent.l}%)`"
+        >
           <p>
             Copyright 2020 © Hoglund Law - Hoglund & Mrozik, P.L.L.C. -
             Bankruptcy & Social Security Disability
@@ -154,8 +184,17 @@ export default {
   created() {
     this.content = this.page
   },
+  mounted() {
+    console.log(this.page)
+  },
   methods: {
     getStrapiMedia,
+    noWidow(text) {
+      const lastWord = text.slice(text.lastIndexOf(' ') + 1)
+      const index = text.lastIndexOf(' ')
+      text = text.substring(0, index)
+      return `${text}\xA0${lastWord}`
+    },
   },
 }
 </script>
