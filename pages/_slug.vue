@@ -30,7 +30,10 @@
         id="content1"
         class="content innerWrapper"
       >
-        <h1 :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`">
+        <h1
+          v-if="content.content1.title"
+          :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`"
+        >
           {{ noWidow(content.content1.title) }}
         </h1>
         <p
@@ -87,7 +90,10 @@
         id="content2"
         class="content innerWrapper"
       >
-        <h1 :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`">
+        <h1
+          v-if="content.content2.title"
+          :style="`color:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`"
+        >
           {{ noWidow(content.content2.title) }}
         </h1>
         <p
