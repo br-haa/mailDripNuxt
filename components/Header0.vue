@@ -1,5 +1,12 @@
 <template>
   <article id="header" :class="{ scroll: !atTop }">
+    <div
+      v-if="atTop"
+      id="headerTopBar"
+      :style="{ background: `hsl(${color.h},${color.s}%,${color.l}%)` }"
+    >
+      <p>Over 70+ Years Of Combined Experience</p>
+    </div>
     <div id="headerFlex" class="innerWrapper">
       <slot name="logo"> </slot>
       <slot name="numberBlock"></slot>
@@ -10,6 +17,12 @@
 <script>
 export default {
   name: 'TopHeader',
+  props: {
+    color: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       atTop: true,
@@ -35,7 +48,7 @@ export default {
 
 <style scoped lang="scss">
 #header {
-  height: 100px;
+  height: clamp(100px, 8vw, 130px);
   z-index: 600;
   display: grid;
   box-shadow: 0 0 5px 3px black;
@@ -43,6 +56,18 @@ export default {
   position: fixed;
   transition: 0.3s;
   background: white;
+  #headerTopBar {
+    width: 100%;
+    background: black;
+    height: 35px;
+    text-align: center;
+    display: grid;
+    p {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: white;
+      place-self: center;
+    }
+  }
   #headerFlex {
     display: flex;
     justify-content: space-between;

@@ -3,7 +3,7 @@
     id="pageBody"
     :style="`color:hsl(${textColor.h},${textColor.s}%,${textColor.l}%)`"
   >
-    <Header0>
+    <Header0 :color="hsla">
       <template #logo>
         <logo></logo>
       </template>
@@ -136,7 +136,7 @@
           :style="`background:hsl(${accent.h},${accent.s}%,${accent.l}%)`"
         >
           <p>
-            Copyright 2020 © Hoglund Law - Hoglund & Mrozik, P.L.L.C. -
+            Copyright {{ getYear }} © Hoglund Law - Hoglund & Mrozik, P.L.L.C. -
             Bankruptcy & Social Security Disability
           </p>
         </CopyRight>
@@ -185,6 +185,10 @@ export default {
     textColor() {
       const { h, s, l, a } = this.$store.state.theme.light.textColor
       return { h, s, l, a }
+    },
+    getYear() {
+      const d = new Date()
+      return d.getFullYear()
     },
   },
   created() {
@@ -266,7 +270,7 @@ export default {
   }
 }
 #content1 {
-  padding: 100px 0 0 0;
+  padding-top: clamp(100px, 8vw, 130px);
 }
 footer {
   width: 100%;
