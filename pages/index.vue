@@ -20,6 +20,7 @@ export default {
   async mounted() {
     try {
       this.pages = await this.$strapi.find('Pages')
+      return this.$strapi.find('Pages').then((data) => {})
     } catch (error) {
       console.error(error)
     }
