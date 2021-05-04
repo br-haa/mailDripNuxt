@@ -3,9 +3,6 @@ const strapiBaseUri = process.env.API_URL || 'https://strapi-6ge4.onrender.com'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   env: { strapiBaseUri },
-<<<<<<< HEAD
-  target: 'static',
-=======
   generate: {
     routes() {
       return this.$strapi.find('Pages').then((data) => {
@@ -13,7 +10,6 @@ export default {
       })
     },
   },
->>>>>>> 430f0f15e8a70e988c2af2188a2feabf8fd9e737
   server: {
     host: '0.0.0.0',
   },
@@ -22,6 +18,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
+    script: [{ src: '/insight.js' }],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
