@@ -23,6 +23,7 @@
   let y
   if (!window.Autopilot) window.Autopilot = a
   if (o.app) p = 'devmode=true&' + p
+  // eslint-disable-next-line prefer-const
   z = function (src, asy) {
     const e = d.createElement(s)
     e.src = src
@@ -30,6 +31,7 @@
     e.async = asy
     l.parentNode.insertBefore(e, l)
   }
+  // eslint-disable-next-line prefer-const
   y = function () {
     z(b + t + '?' + p, true)
   }

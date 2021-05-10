@@ -55,7 +55,23 @@
         class="innerWrapper"
         :style="`background:hsl(${hsla.h},${hsla.s}%,${hsla.l}%)`"
       >
-        <form-controller :theme="$store.state.theme.light">
+        <form-controller
+          :theme="$store.state.theme.light"
+          :form-reactor="'FRT472ABB2C5B9B141AA70C42B829F11AFAF58B9606B9194BCD97F11B09EF59846B'"
+          :bjn="'855-538-0121'"
+          :client-link="'https://hoglundlaw.com'"
+          :post-values="[
+            { id: 'URL', value: this.$route.fullPath },
+            {
+              id: 'lead-source',
+              value: 'Mail Drip',
+            },
+            {
+              id: 'lead-vendor',
+              value: '0014W00002KaIm9QAF',
+            },
+          ]"
+        >
           <h1
             id="formTopText"
             :style="`color:hsl(${textColor.h},${textColor.s}%,${
