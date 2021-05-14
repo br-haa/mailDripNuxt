@@ -19,8 +19,13 @@ export default {
   },
   async mounted() {
     try {
-      this.pages = await this.$strapi.find('Pages')
-      return this.$strapi.find('Pages').then((data) => {})
+      if (this.$route.query.test) {
+        this.pages = await this.$strapi.find('Pages')
+        return this.$strapi.find('Pages').then((data) => {})
+      } else {
+        window.location.href =
+          'https://hoglundlaw.com/?utm_source=maildrip&medium=webapp'
+      }
     } catch (error) {
       console.error(error)
     }

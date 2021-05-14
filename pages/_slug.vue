@@ -180,13 +180,31 @@ export default {
     const matchingPage = await $strapi.find('pages', {
       name: params.slug,
     })
+    const { name: title, description } = matchingPage[0]
+    const Title = title ?? 'Hoglund Law'
+    const Description = description ?? 'Get the help you need'
     return {
       page: matchingPage[0],
+      Title,
+      Description,
     }
   },
+
   data() {
     return {
       content: {},
+    }
+  },
+  head() {
+    return {
+      title: this.Title,
+      meta: [{ name: 'description', content: this.Description }],
+      script: [
+        {
+          src: '//325304.tctm.co/t.js',
+          async: true,
+        },
+      ],
     }
   },
   computed: {
@@ -209,9 +227,6 @@ export default {
   },
   created() {
     this.content = this.page
-  },
-  mounted() {
-    console.log(this.page)
   },
   methods: {
     getStrapiMedia,
