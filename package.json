@@ -28,7 +28,7 @@
     "haa-form": "^0.2.13",
     "nuxt": "^2.15.3",
     "sass": "^1.32.8",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^12.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
